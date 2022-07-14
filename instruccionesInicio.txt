@@ -1,0 +1,25 @@
+1.- inicializar el proyecto con node:
+npm init -y
+
+2.- instalar las librerias o módulos con las que vamos a trabajar:
+npm install:
+express
+pg
+//opcionales
+nodemon
+moment
+*sequelize->sequelize-cli pg-hstore pg
+chalk -->npm install chalk@4.1.0
+dotenv
+2.1.- agregar el archivo .gitingnore para poner la carpeta node_modules/
+**************************************************
+
+3.- crear la aplicacion: archivo js de nombre evaluacion.js
+4.- importar las librerias con require
+4.1.-  inicializar las aplicacion de express y la conexion de pg
+5.- cargar el archivo html para que se cargue al inicio a traves de la ruta "/"
+6.- usar body-parser para leer el contenido de los formularios
+7.- generar las rutas de express
+8.- generar las consultas SQL con pg
+9.- enviar los datos al cliente
+10.- ejecutar
