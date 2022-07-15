@@ -80,6 +80,26 @@ app.get('/transferencias',async function(req,res){
 })
 
 
+app.delete('',function (req,res) {
+    //con req.query buscar el id y usarlo para eliminar
+    //no se pueden eliminar usuario que tengan tansferencias asociadas.
+})
+
+app.put('',function(req,res){
+    //para editar (update) un usuario
+    //id viene del query
+    //los nuevos datos vienen en el body
+})
+
+app.post('',function(req,res){
+    //datos vienen en el body
+    //para insertar una transferencia
+    //OJO: no se peude transferir mas dinero que el que le queda al usuario
+    //OJO: cuando transfieran dinero, se debe descontar del saldo del emisor
+    //OJO: cuando se transfiera dinero, se debe sumar al receptor.
+    //OJO: usar trasnsaccion para ejecutar ambas querys
+})
+
 
 //iniciar servidor
 app.listen(port, () => console.log(`servidor iniciado en puerto ${port}!`))

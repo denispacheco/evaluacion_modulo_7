@@ -188,16 +188,13 @@
       e.preventDefault();
       let nombre = $("form:first input:first").val();
       let balance = Number($("form:first input:nth-child(2)").val());
-      try {
+      let datos={nombre:nombre,balance:balance};
+      try {        
         const response = await fetch("http://localhost:3000/usuario", {
           method: "POST",     
-          header:{"Content-type":"application/json"}     ,
-          body: JSON.stringify({
-            nombre:nombre,
-            balance:balance,
-          }),
-        });
-       // alert("datos:" +nombre + balance);
+          headers:{"Content-type":"application/json"},
+          body: JSON.stringify({nombre,balance})
+        });       
         $("form:first input:first").val("");
         $("form:first input:nth-child(2)").val("");
         location.reload();
@@ -218,6 +215,7 @@
       try {
         const response = await fetch("http://localhost:3000/transferencia", {
           method: "post",
+          headers:{"Content-type":"application/json"},
           body: JSON.stringify({
             emisor,
             receptor,
